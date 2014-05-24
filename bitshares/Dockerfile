@@ -2,7 +2,7 @@
 FROM ubuntu:14.04
 MAINTAINER denkhaus <peristaltic@gmx.net>
 
-DIR = bitshares_toolkit 
+DIR=bitshares_toolkit 
 # Hack for initctl not being available in Ubuntu
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -fs /bin/true /sbin/initctl
