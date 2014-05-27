@@ -4,8 +4,8 @@ MAINTAINER denkhaus <peristaltic@gmx.net>
 
 ENV DIR bitshares_toolkit 
 # Hack for initctl not being available in Ubuntu
-RUN dpkg-divert --local --rename --add /sbin/initctl
-RUN ln -fs /bin/true /sbin/initctl
+#RUN dpkg-divert --local --rename --add /sbin/initctl
+#RUN ln -fs /bin/true /sbin/initctl
 
 
 RUN apt-get update
