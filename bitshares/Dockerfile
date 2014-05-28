@@ -15,4 +15,4 @@ RUN cd $DIR && git submodule update --init
 RUN cd $DIR && cmake . 
 RUN cd $DIR && make
 EXPOSE 5679 5680
-ENTRYPOINT  cd /bitshares_toolkit/programs/client/ && ./bitshares_client
+ENTRYPOINT  cd /bitshares_toolkit/programs/client/ && ./bitshares_client --server
