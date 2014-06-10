@@ -1,3 +1,6 @@
 [submodule "docker-desktop"]
 	path = docker-desktop
 	url = https://github.com/rogaha/docker-desktop.git
+[submodule "dockvpn"]
+	path = dockvpn
+	url = https://github.com/jpetazzo/dockvpn.git
