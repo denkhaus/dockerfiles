@@ -4,3 +4,6 @@
 [submodule "dockvpn"]
 	path = dockvpn
 	url = https://github.com/jpetazzo/dockvpn.git
+[submodule "nginx-proxy"]
+	path = nginx-proxy
+	url = https://github.com/jwilder/nginx-proxy.git
