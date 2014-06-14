@@ -7,3 +7,6 @@
 [submodule "nginx-proxy"]
 	path = nginx-proxy
 	url = https://github.com/jwilder/nginx-proxy.git
+[submodule "docker-consul"]
+	path = docker-consul
+	url = git@github.com:denkhaus/docker-consul.git

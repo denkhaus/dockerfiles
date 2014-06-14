@@ -14,10 +14,12 @@ RUN apt-get install -y cmake git nano libncurses5-dev libreadline-dev uuid-dev g
 
 RUN git clone https://github.com/BitShares/bitshares_toolkit.git $DIR 
 
-ENV BS_REVISION 201406132329
-
+ENV BS_REVISION 201406142207
 RUN cd $DIR && git submodule update --init && git pull --all && cmake . && make clean && make
+
+ENV BS_CONFIG_REVISION 201406132329                                                          
 ADD .BitSharesXTS /.BitSharesXTS
+
 WORKDIR /bs/programs/client/
 EXPOSE 5679 5680 8764
-ENTRYPOINT /bs/programs/client/bitshares_client --server
+ENTRYPOINT /bs/programs/client/bitshares_client --server --p2p-port 8764
