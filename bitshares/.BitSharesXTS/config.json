@@ -1,21 +1,60 @@
 {
   "rpc": {
-      "rpc_user": "denkhaus",
-          "rpc_password": "345678763458768345876234876",
-              "rpc_endpoint": "127.0.0.1:5679",
-                  "httpd_endpoint": "127.0.0.1:5680",
-                      "htdocs": "./htdocs"
-                        },
-                          "default_peers": [
-                              "107.170.30.182:8764",
-                                  "114.215.104.153:8764",
-                                      "84.238.140.192:8764"
-                                        ],
-                                          "ignore_console": false,
-                                            "logging": {
-                                                "includes": [],
-                                                    "appenders": [],
-                                                        "loggers": []
-                                                          }
-                                                          }
-                                                          
+    "rpc_user": "your-usernames",
+    "rpc_password": "your-very-complicated-password-sdfdfjhk#jzh0sfukj2hasg5",
+    "rpc_endpoint": "127.0.0.1:5679",
+    "httpd_endpoint": "127.0.0.1:5680",
+    "htdocs": "./htdocs"
+  },
+  "default_peers": [
+    "107.170.30.182:8764",
+    "114.215.104.153:8764",
+    "84.238.140.192:8764"
+  ],
+  "ignore_console": false,
+  "logging": {
+    "includes": [],
+    "appenders": [{
+        "name": "default",
+        "type": "file",
+        "args": {
+          "format": "${timestamp} ${thread_name} ${context} ${file}:${line} ${method} ${level}]  ${message}",
+          "filename": "/.BitSharesXTS/default.log",
+          "flush": true,
+          "truncate": false
+        },
+        "enabled": true
+      },{
+        "name": "rpc",
+        "type": "file",
+        "args": {
+          "format": "${timestamp} ${thread_name} ${context} ${file}:${line} ${method} ${level}]  ${message}",
+          "filename": "/.BitSharesXTS/rpc.log",
+          "flush": true,
+          "truncate": false
+        },
+        "enabled": true
+      }
+    ],
+    "loggers": [{
+        "name": "default",
+        "parent": null,
+        "level": "debug",
+        "enabled": true,
+        "additivity": false,
+        "appenders": [
+          "default"
+        ]
+      },{
+        "name": "rpc",
+        "parent": null,
+        "level": "debug",
+        "enabled": true,
+        "additivity": false,
+        "appenders": [
+          "rpc"
+        ]
+      }
+    ]
+  }
+}
